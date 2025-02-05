@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/stateAndCity"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:background="@android:color/transparent"
+        android:ems="10"
+        android:fontFamily="sans-serif-medium"
+        android:inputType="text"
+        android:text="Commerce, California"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:translationX="60dp"
+        android:translationY="5dp" />
+
+    <ImageView
+        android:id="@+id/tweetButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleX="1"
+        android:scaleY="1"
+        android:translationX="340dp"
+        android:translationY="-45dp"
+        app:srcCompat="@drawable/xicon" />
+
+    <ImageButton
+        android:id="@+id/backButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:src="@drawable/arrowleft"
+        android:translationX="5dp"
+        android:translationY="-100dp"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeCustom.TabLayout"
+        android:translationY="-100dp"
+        app:tabIndicatorColor="#FFFFFF"
+        app:tabTextAppearance="@style/MineCustomTabText"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="776dp"
+        android:layout_weight="1"
+        android:translationY="-100dp" />
+
+</LinearLayout>

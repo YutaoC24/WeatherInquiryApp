@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:orientation="vertical"
+    android:translationY="0dp">
+
+    <!--
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#000000"
+        android:elevation="4dp"
+        android:translationY="140dp"
+        android:visibility="visible"
+        app:navigationIcon="@drawable/map_search"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+    -->
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:background="#000000"
+        android:contentDescription="searchIcon"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        android:src="@drawable/map_search"
+        android:translationX="-10dp"
+        android:translationY="15dp"
+        tools:ignore="HardcodedText,TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/MainPageTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WeatherApp"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:translationX="10dp"
+        android:translationY="-10dp" />
+
+    <!--
+    <include android:id="@+id/main_week_content" layout="@layout/week_content"/>
+    -->
+</LinearLayout>

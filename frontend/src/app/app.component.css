@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+input[type="checkbox"]:checked {
+    background-color: rgb(241, 181, 69);
+    border: none;
+  }
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.favorite_text {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.container_bg {
+    background-color: #eeeeee;
+    height: 70%;
+    margin-top: 10px;
+}
+
+.chart_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather_symbols {
+    width: 28px;
+}
+
+#day_title_row {
+    margin-top: 10px;
+}
+
+.tab_title {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.container_bg2 {
+    margin-top: 32px;
+}
+
+hr { margin: 0.1em auto; }
+
+.day_view_title{
+    font-weight: 800;
+    text-align: left;
+}
+
+.day_content_row{
+    margin-top: 15px;
+}
+
+#temp_chart{
+    width: 100%;
+}
+
+.day_content_row_hr{
+    color: grey;
+}
+
+.day_view_content{
+    font-weight: 500;
+}
+
+#results {
+    margin-top: 30px;
+}
+
+#x_button {
+    text-align: end;
+    color: black;
+}
+
+#results2 {
+    margin-top: -60px;
+}
+
+#detail_title{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 0;
+}
+
+#detail_title2{
+    margin-bottom: 20px;
+}
+
+.detail_table_title{
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+}
+
+.detail_row{
+    padding: 10px;
+    font-size: 17px;
+    border-bottom: #e2e2e2 solid 2px;
+    background-color: #eeeeee;
+}
+
+.detail_row2{
+    padding: 10px;
+    font-size: 17px;
+    border-bottom: #e2e2e2 solid 2px;
+}
+
+.detail_table_value{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+#details_panel{
+    display: inline-block;
+    width: 100%;
+    vertical-align: top; 
+    position: relative;
+    margin-top: 80px;
+    /*position: absolute;
+    top: calc(900px - 60%);
+    left: 0px;*/
+}
+
+#general_panel{
+    display: inline-block;
+    width: 100%;
+    vertical-align: top; 
+}
+
+#tabs{
+    margin-top: 20px;
+}
+
+#details_toggle {
+    text-align: right;
+    background: none;
+    border: none;
+    text-decoration: underline rgb(148, 188, 194);
+}
+
+p#result_title{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#result_button {
+    border: transparent;
+    font-size: 15px;
+}
+
+#favorite_button {
+    border: transparent;
+    font-size: 15px;
+}
+
+p#search_title{
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+    margin-top: 10px;
+    text-align: center;
+}
+
+p#auto_detect_title{
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 1px;
+    text-align: right;
+}
+
+#auto_detect_label{
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+#search_button_container {
+    text-align: center;
+    margin-top: -17px;
+}
+
+div.clickable_date {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+span.clickable_bin {
+    cursor: pointer;
+}
+
+#clear_button{
+    margin-left: 8px;
+    border: solid 1.5px;
+}
+
+.input_title{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+.control-label:after{
+    content:"*";
+    color:red;
+}
+
+#star_container{
+    color: white;
+}
+
+#star_button {
+    margin: none;
+    padding: none;
+    position: relative;
+    right: -8px;
+    color: black;
+    font-size: 22px;
+}
+
+#star_button2{
+    margin: none;
+    padding: none;
+    bottom: 1.7px;
+    right: 11px;
+    position: relative;
+    color: white;
+}
+
+#sorry_container {
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+#error_container {
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+#sorry_row {
+    padding: 18px;
+    background-color: #fff4ce;
+    border-radius: 10px;
+    color: #8a7b42;
+}
+
+#error_row {
+    padding: 18px;
+    background-color: #ffd6da;
+    border-radius: 10px;
+    color: #782e3b;
+}
+
+#sorry {
+    font-weight: 600;
+}
+
+#favorites_panel {
+    position: relative;
+}
+
+.favorite_row_title{
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 17px;
+    border-bottom: #e2e2e2 solid 2px;
+    font-weight: 600;
+}
+
+.favorite_row_content{
+    padding: 10px;
+    font-size: 17px;
+    border-bottom: #e2e2e2 solid 2px;
+    font-weight: 500;
+}
+
+#progressbar2 {
+    margin-top: 20px;
+}

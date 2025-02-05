@@ -1,0 +1,41 @@
+runtime: nodejs20
+
+handlers:
+
+- url: /([^.]+)/?$  # URls with no dot in them (e.g. /index, /about, etc)
+  static_files: dist/browser/index.html
+  upload: dist/browser/index.html
+
+# Serve index.html for the root URL ('/')
+- url: /
+  static_files: dist/browser/index.html
+  upload: dist/browser/index.html
+
+# Serve CSS files from the root 'dist/' directory
+- url: /(.+)\.css
+  static_files: dist/browser/\1.css
+  upload: dist/browser/.+\.css
+
+# Serve JavaScript files from the root 'dist/' directory
+- url: /(.+)\.js
+  static_files: dist/browser/\1.js
+  upload: dist/browser/.+\.js
+
+# Serve HTML files from the root 'dist/' directory
+- url: /(.+)\.html
+  static_files: dist/browser/\1.html
+  upload: dist/browser/.+\.html
+
+# Serve files from the 'assets/' directory
+- url: /assets/(.*)
+  static_files: dist/browser/assets/\1
+  upload: dist/browser/assets/(.*)
+
+- url: /media/(.*)
+  static_files: dist/browser/media/\1
+  upload: dist/browser/media/(.*)
+
+# Catch-all rule to serve index.html for any path not matched above
+- url: /.*
+  static_files: dist/browser/index.html
+  upload: dist/browser/index.html

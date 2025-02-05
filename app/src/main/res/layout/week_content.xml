@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00FFFFFF"
+    android:orientation="vertical"
+    android:visibility="visible">
+
+    <LinearLayout
+        android:id="@+id/mainPageData"
+        android:layout_width="match_parent"
+        android:layout_height="610dp"
+        android:background="#2e2e2e"
+        android:orientation="vertical"
+        android:translationY="0dp"
+        android:visibility="visible">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#272727"
+            android:translationY="500dp">
+
+            <EditText
+                android:id="@+id/mainPageLowTemp5"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="8dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:inputType="text"
+                android:text="47"
+                android:textColor="#BCBCBC"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/mainPageWeatherSmall5"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.666" />
+
+            <EditText
+                android:id="@+id/mainPageHighTemp5"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="8dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:inputType="text"
+                android:text="47"
+                android:textColor="#BCBCBC"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/mainPageLowTemp5"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.666" />
+
+            <ImageView
+                android:id="@+id/mainPageWeatherSmall5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="80dp"
+                android:src="@drawable/clear_day"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/mainPageDate5"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/mainPageDate5"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="8dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:inputType="text"
+                android:text="2024-11-11"
+                android:textColor="#BCBCBC"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#272727"
+            android:translationY="415dp">
+
+            <EditText
+                android:id="@+id/mainPageLowTemp4"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="8dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:inputType="text"
+                android:text="47"
+                android:textColor="#BCBCBC"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/mainPageWeatherSmall4"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.666" />
+
+            <EditText
+                android:id="@+id/mainPageHighTemp4"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="8dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:inputType="text"
+                android:text="47"
+                android:textColor="#BCBCBC"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/mainPageLowTemp4"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.666" />
+
+            <ImageView
+                android:id="@+id/mainPageWeatherSmall4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="80dp"
+                android:src="@drawable/clear_day"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/mainPageDate4"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/mainPageDate4"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="8dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:inputType="text"
+                android:text="2024-11-11"
+                android:textColor="#BCBCBC"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#272727"
+            android:translationY="330dp">
+
+            <EditText
+                android:id="@+id/mainPageLowTemp3"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="8dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:inputType="text"
+                android:text="47"
+                android:textColor="#BCBCBC"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/mainPageWeatherSmall3"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.666" />
+
+            <EditText
+                android:id="@+id/mainPageHighTemp3"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="8dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:inputType="text"
+                android:text="47"
+                android:textColor="#BCBCBC"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/mainPageLowTemp3"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.666" />
+
+            <ImageView
+                android:id="@+id/mainPageWeatherSmall3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="80dp"
+                android:src="@drawable/clear_day"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/mainPageDate3"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/mainPageDate3"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="8dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:inputType="text"
+                android:text="2024-11-11"
+                android:textColor="#BCBCBC"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#272727"
+            android:translationY="245dp">
+
+            <EditText
+                android:id="@+id/mainPageLowTemp2"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="8dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:inputType="text"
+                android:text="47"
+                android:textColor="#BCBCBC"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/mainPageWeatherSmall2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.666" />
+
+            <EditText
+                android:id="@+id/mainPageHighTemp2"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="8dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:inputType="text"
+                android:text="47"
+                android:textColor="#BCBCBC"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/mainPageLowTemp2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.666" />
+
+            <ImageView
+                android:id="@+id/mainPageWeatherSmall2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="80dp"
+                android:src="@drawable/clear_day"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/mainPageDate2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/mainPageDate2"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="8dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:inputType="text"
+                android:text="2024-11-11"
+                android:textColor="#BCBCBC"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#272727"
+            android:translationY="160dp">
+
+            <ImageView
+                android:id="@+id/mainPageWeatherSmall1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="80dp"
+                android:src="@drawable/clear_day"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/mainPageDate1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/mainPageDate1"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="8dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:inputType="text"
+                android:text="2024-11-11"
+                android:textColor="#BCBCBC"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <EditText
+                android:id="@+id/mainPageLowTemp1"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="8dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:inputType="text"
+                android:text="47"
+                android:textColor="#BCBCBC"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/mainPageWeatherSmall1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <EditText
+                android:id="@+id/mainPageHighTemp1"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="8dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:inputType="text"
+                android:text="47"
+                android:textColor="#BCBCBC"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/mainPageLowTemp1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#272727"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:translationY="-190dp">
+
+            <ImageButton
+                android:id="@+id/infoButton"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="5dp"
+                android:background="@android:color/transparent"
+                android:scaleX="0.6"
+                android:scaleY="0.6"
+                android:src="@drawable/informationicon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mainPageWeather"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <EditText
+                android:id="@+id/mainPageAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginTop="30dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center_horizontal"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:text="Los Angeles, California"
+                android:textAlignment="center"
+                android:textColor="#bcbcbc"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mainPageWeather"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <EditText
+                android:id="@+id/mainPageWeather"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:fontFamily="sans-serif"
+                android:inputType="text"
+                android:text="Mostly Clear"
+                android:textAlignment="viewStart"
+                android:textColor="#bcbcbc"
+                android:translationY="0dp"
+                app:layout_constraintStart_toStartOf="@+id/mainPageTemp"
+                app:layout_constraintTop_toBottomOf="@+id/mainPageTemp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <EditText
+                android:id="@+id/mainPageTemp"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="100dp"
+                android:background="#00FFFFFF"
+                android:ems="10"
+                android:fontFamily="sans-serif-medium"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:text="55\u2109"
+                android:textAlignment="viewStart"
+                android:textColor="#bcbcbc"
+                android:textSize="30sp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/mainPageWeatherIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="40dp"
+                android:scaleType="fitXY"
+                android:scaleX="3"
+                android:scaleY="3"
+                android:src="@drawable/mostly_clear_day"
+                app:layout_constraintEnd_toStartOf="@+id/mainPageTemp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:background="#272727"
+            android:translationY="-175dp">
+
+            <ImageView
+                android:id="@+id/pressureIcon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="40dp"
+                android:scaleX="1.2"
+                android:scaleY="1.2"
+                android:src="@drawable/pressure"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/visibilityIcon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:scaleX="1.2"
+                android:scaleY="1.2"
+                android:src="@drawable/visibility"
+                app:layout_constraintEnd_toStartOf="@+id/pressureIcon"
+                app:layout_constraintStart_toEndOf="@+id/windSpeedIcon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/windSpeedIcon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="20dp"
+                android:scaleX="1.2"
+                android:scaleY="1.2"
+                android:src="@drawable/wind_speed"
+                app:layout_constraintStart_toEndOf="@+id/humidityIcon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/humidityIcon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="20dp"
+                android:scaleX="1.2"
+                android:scaleY="1.2"
+                android:src="@drawable/humidity"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/mainPageHumidty"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:background="#00FFFFFF"
+                android:ems="10"
+                android:fontFamily="sans-serif-medium"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:text="90%"
+                android:textAlignment="center"
+                android:textColor="#bcbcbc"
+                android:textSize="20sp"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/humidityIcon" />
+
+            <EditText
+                android:id="@+id/mainPageTitle1"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="36dp"
+                android:background="#00FFFFFF"
+                android:ems="10"
+                android:fontFamily="sans-serif-light"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:text="Humidity"
+                android:textAlignment="center"
+                android:textColor="#bcbcbc"
+                android:textSize="16sp"
+                android:translationY="-10dp"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/humidityIcon" />
+
+            <EditText
+                android:id="@+id/mainPageTitle2"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="36dp"
+                android:background="#00FFFFFF"
+                android:ems="10"
+                android:fontFamily="sans-serif-light"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:text="Wind Speed"
+                android:textAlignment="center"
+                android:textColor="#bcbcbc"
+                android:textSize="16sp"
+                android:translationY="-10dp"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/humidityIcon" />
+
+            <EditText
+                android:id="@+id/mainPageTitle3"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="192dp"
+                android:layout_marginTop="36dp"
+                android:background="#00FFFFFF"
+                android:ems="10"
+                android:fontFamily="sans-serif-light"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:text="Visibility"
+                android:textAlignment="center"
+                android:textColor="#bcbcbc"
+                android:textSize="16sp"
+                android:translationY="-10dp"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/humidityIcon" />
+
+            <EditText
+                android:id="@+id/mainPageTitle4"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="282dp"
+                android:layout_marginTop="36dp"
+                android:background="#00FFFFFF"
+                android:ems="10"
+                android:fontFamily="sans-serif-light"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:text="Pressure"
+                android:textAlignment="center"
+                android:textColor="#bcbcbc"
+                android:textSize="16sp"
+                android:translationY="-10dp"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/humidityIcon" />
+
+            <EditText
+                android:id="@+id/mainPageVisibility"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="12dp"
+                android:background="#00FFFFFF"
+                android:ems="10"
+                android:fontFamily="sans-serif-medium"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:text="90mi"
+                android:textAlignment="center"
+                android:textColor="#bcbcbc"
+                android:textSize="20sp"
+                android:visibility="visible"
+                app:layout_constraintStart_toEndOf="@+id/mainPageWindSpeed"
+                app:layout_constraintTop_toBottomOf="@+id/visibilityIcon" />
+
+            <EditText
+                android:id="@+id/mainPagePressure"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="15dp"
+                android:background="#00FFFFFF"
+                android:ems="10"
+                android:fontFamily="sans-serif-medium"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:text="30.0inHg"
+                android:textAlignment="center"
+                android:textColor="#bcbcbc"
+                android:textSize="20sp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/mainPageVisibility"
+                app:layout_constraintTop_toBottomOf="@+id/pressureIcon" />
+
+            <EditText
+                android:id="@+id/mainPageWindSpeed"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="12dp"
+                android:background="#00FFFFFF"
+                android:ems="10"
+                android:fontFamily="sans-serif-medium"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:text="90mph"
+                android:textAlignment="center"
+                android:textColor="#bcbcbc"
+                android:textSize="20sp"
+                android:visibility="visible"
+                app:layout_constraintStart_toEndOf="@+id/mainPageHumidty"
+                app:layout_constraintTop_toBottomOf="@+id/humidityIcon" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/searchfavtabMain"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="end"
+        android:layout_margin="16dp"
+        android:background="@drawable/fab_background"
+        android:contentDescription="addFav"
+        android:src="@drawable/rem_fav"
+        android:translationY="-150dp"
+        app:fabCustomSize="40dp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <ProgressBar
+        android:id="@+id/progressBar3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_weight="1"
+        android:indeterminate="true"
+        android:translationX="180dp"
+        android:translationY="150dp"
+        android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/loadingText3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:text="Loading"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:translationY="-200dp"
+        android:visibility="gone" />
+
+</LinearLayout>

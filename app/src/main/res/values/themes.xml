@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.WeatherViewer" parent="android:Theme.Material.Light.NoActionBar"/>
+
+    <style name="ThemeCustom.TabLayout" parent="Theme.MaterialComponents.NoActionBar"/>
+
+    <style name="MineCustomTabText" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="splashTheme" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/spashscreenicon</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+</resources>

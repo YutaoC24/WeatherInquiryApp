@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Tab2Fragment">
+
+    <EditText
+        android:id="@+id/temperatureRange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Temperature Range"
+        android:textAlignment="center"
+        android:textColor="#8D8D8D"
+        android:textSize="24sp"
+        android:translationX="60dp" />
+
+    <com.highsoft.highcharts.core.HIChartView
+        android:id="@+id/highChartView1"
+        android:layout_width="match_parent"
+        android:layout_height="700dp"
+        android:translationY="60dp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:translationY="300dp"
+        android:visibility="visible" />
+
+    <EditText
+        android:id="@+id/loadingText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:text="Loading"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:translationY="330dp"
+        android:visibility="visible" />
+
+</FrameLayout>

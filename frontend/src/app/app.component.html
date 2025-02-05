@@ -1,0 +1,272 @@
+<div class = "container justify-content-center">
+  <div class = "container_bg container-md">
+    <div class = "row justify-content-md-center">
+      <div class = "col-md-auto">
+        <p id = search_title>Weather Search⛅</p>
+      </div>
+    </div>
+    <form [formGroup] = "LocationForm">
+      <div class = "form-group row justify-content-start">
+        <label for = "street" class = "col-sm-2 offset-md-1 col-form-label control-label input_title" id = "street_title">Street</label>
+        <div class = "col-sm-7">
+          <input type = "text" class = "form-control" [ngClass] = "(LocationForm.get('street')?.dirty || LocationForm.get('street')?.touched) && LocationForm.get('street')?.errors ? 'is-invalid' : ''" id = "street" formControlName = "street">
+          <div class = "invalid-feedback">
+            Please enter a valid street
+          </div>
+        </div>
+      </div>
+      <div class = "form-group row justify-content-start">
+        <label for = "city" class = "col-sm-2 offset-md-1 col-form-label control-label input_title" id = "city_title">City</label>
+        <div class = "col-sm-7">
+          <input type = "text" class = "form-control" [matAutocomplete]="auto" matInput [ngClass] = "(LocationForm.get('city')?.dirty || LocationForm.get('city')?.touched) && LocationForm.get('city')?.errors ? 'is-invalid' : ''" id = "city" formControlName = "city">
+          <div class = "invalid-feedback">
+            Please enter a valid city
+          </div>
+          <mat-autocomplete #auto="matAutocomplete" (optionSelected)='populateState($event.option.value)' [displayWith]="displayFn">
+            @for (city_state_pair of city_state_pairs | async; track city_state_pair) {
+              <mat-option [value]="city_state_pair">{{city_state_pair.city}}</mat-option>
+            }
+          </mat-autocomplete>
+        </div>
+      </div>
+      <div class = "form-group row justify-content-start">
+        <label for = "state" class = "col-sm-2 offset-md-1 col-form-label control-label input_title" id = "state_title">State</label>
+        <div class = "col-sm-3" id = "state_input">
+          <select id = "state" class = "form-control" [ngClass] = "(LocationForm.get('state')?.dirty || LocationForm.get('state')?.touched) && LocationForm.get('state')?.errors ? 'is-invalid' : ''" name = "state" formControlName = "state">
+            <option selected disabled value = "">Select your state</option>
+            <option value = "AL">Alabama</option>
+            <option value = "AK">Alaska</option>
+            <option value = "AZ">Arizona</option>
+            <option value = "AR">Arkansas</option>
+            <option value = "CA">California</option>
+            <option value = "CO">Colorado</option>
+            <option value = "CT">Connecticut</option>
+            <option value = "DE">Delaware</option>
+            <option value = "DC">District Of Columbia</option>
+            <option value = "FL">Florida</option>
+            <option value = "GA">Georgia</option>
+            <option value = "HI">Hawaii</option>
+            <option value = "ID">Idaho</option>
+            <option value = "IL">Illinois</option>
+            <option value = "IN">Indiana</option>
+            <option value = "IA">Iowa</option>
+            <option value = "KS">Kansas</option>
+            <option value = "KY">Kentucky</option>
+            <option value = "LA">Louisiana</option>
+            <option value = "ME">Maine</option>
+            <option value = "MD">Maryland</option>
+            <option value = "MA">Massachusetts</option>
+            <option value = "MI">Michigan</option>
+            <option value = "MN">Minnesota</option>
+            <option value = "MO">Missouri</option>
+            <option value = "MT">Montana</option>
+            <option value = "NE">Nebraska</option>
+            <option value = "NV">Nevada</option>
+            <option value = "NH">New Hampshire</option>
+            <option value = "NJ">New Jersey</option>
+            <option value = "NM">New Mexico</option>
+            <option value = "NY">New York</option>
+            <option value = "NC">North Carolina</option>
+            <option value = "ND">North Dakota</option>
+            <option value = "OH">Ohio</option>
+            <option value = "OK">Oklahoma</option>
+            <option value = "OR">Oregon</option>
+            <option value = "PA">Pennsylvania</option>
+            <option value = "RI">Rhode Island</option>
+            <option value = "SC">South Carolina</option>
+            <option value = "SD">South Dakota</option>
+            <option value = "TN">Tennessee</option>
+            <option value = "TX">Texas</option>
+            <option value = "UT">Utah</option>
+            <option value = "VT">Vermont</option>
+            <option value = "VA">Virginia</option>
+            <option value = "WA">Washington</option>
+            <option value = "WV">West Virginia</option>
+            <option value = "WI">Wisconsin</option>
+            <option value = "WY">Wyoming</option>
+          </select>
+        </div>
+      </div>
+    </form>
+    <hr class="hr" style="margin-top: 10px;"/>
+    <div class = "row justify-content-md-center">
+      <div class = "col-6">
+        <p id = "auto_detect_title" class = "control-label">Autodetect Location</p>
+      </div>
+      <div class = "col-6">
+        <input class = "form-check-input" type = "checkbox" value = "" color = "yellow" (change)="autoDetect($event)" id = "auto_detect_button">
+        <label class = "form-check-label" for = "auto_detect_button" id = "auto_detect_label">Current Location</label>
+      </div>
+    </div>
+    <div class = "row justify-content-md-center">
+      <div class = "col-12" id = "search_button_container">
+        <button class = "btn btn-primary" type = "button" id = "search_button" (click) = "search_start()" disabled><span class = "bi-search"></span>Search</button>
+        <button class = "btn btn btn-outline-secondary" type = "button" id = "clear_button" (click) = 'clear_all()'><span class = "bi-list-nested"></span>Clear</button>
+      </div>
+    </div>
+  </div>
+  <div class = "container-md container_bg2">
+    <div class = "row justify-content-md-center">
+      <div class = "col-12" id = "search_button_container">
+        <button type = "button" class = "btn btn-outline-primary active" (click) = 'display_result($event)' data-bs-toggle="button" aria-pressed="true" id = "result_button">Results</button>
+        <button type = "button" class = "btn btn-outline-primary" (click) = 'display_favorites($event)' data-bs-toggle="button" id = "favorite_button">Favorites</button>
+      </div>
+    </div>
+  </div>
+  <div class = "parent" [@slidingState]="stateName" id = 'general_panel' [hidden] = 'hideState1'>
+    <div class = "container-md" id = "results">
+      <div class = "row justify-content-md-center">
+        <div class = "col-md-auto">
+          <p id = result_title>Forecast at New York, New York</p>
+        </div>
+      </div>
+      <div class = "row justify-content-end">
+        <div class = "col-md-2" id = "details_toggle">
+          <button class = "btn btn-outline-secondary" type = "button" id = 'star_container' (click) = "addFavorite()"><span id = 'star_button' class = "bi bi-star"></span><span id = 'star_button2' class = "bi bi-star-fill"></span></button>
+          <button id = details_toggle (click)="general_to_detail()">Details<span  class = "bi-chevron-right"></span></button>
+        </div>
+      </div>
+      <div id = "tabs">
+        <ul class="nav nav-tabs justify-content-end" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active tab_title" id="day-tab" data-bs-toggle="tab" data-bs-target="#day" type="button" role="tab" aria-controls="day" aria-selected="true">Day view</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link tab_title" id="chart-tab" data-bs-toggle="tab" data-bs-target="#chart" type="button" role="tab" aria-controls="chart" aria-selected="false">Daily Temp. Chart</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link tab_title" id="meteo-tab" data-bs-toggle="tab" data-bs-target="#meteo" type="button" role="tab" aria-controls="meteo" aria-selected="false">Meteogram</button>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="day" role="tabpanel" aria-labelledby="day-tab">
+            <div class = "row" id = "day_title_row" style="width:110%">
+              <div class = "col-1 day_view_title h6" style="width: 3%">#</div>
+              <div class = "col-3 day_view_title h6" style="width: 23%">Date</div>
+              <div class = "col-2 day_view_title h6">Status</div>
+              <div class = "col-2 day_view_title h6">Temp. High(&deg;F)</div>
+              <div class = "col-2 day_view_title h6">Temp. Low(&deg;F)</div>
+              <div class = "col-2 day_view_title h6">Wind Speed(mph)</div>
+            </div>
+            <hr class="hr"/>
+            <div class = "row day_content_row" style="width:110%">
+              <div class = "col-1 day_view_content h6" style="width: 3%">1</div>
+              <div class = "col-3 day_view_content h6 clickable_date" style="width: 23%">Tuesday, Oct.15, 2024</div>
+              <div class = "col-2 day_view_content h6"><img
+                src="/assets/clear_day.svg"
+                class="weather_symbols"
+                alt="clear.svg"
+              />Clear</div>
+              <div class = "col-2 day_view_content h6">57.76</div>
+              <div class = "col-2 day_view_content h6">41.68</div>
+              <div class = "col-2 day_view_content h6">13</div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="chart" role="tabpanel" aria-labelledby="chart-tab">
+            <div class = "chart_container">
+              <highcharts-chart *ngIf="isHighcharts" [update] = "true" [Highcharts]="Highcharts" [options]="chartOptions" [constructorType]="chartConstructor"></highcharts-chart>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="meteo" role="tabpanel" aria-labelledby="meteo-tab">
+            <div class = "chart_container">
+              <highcharts-chart *ngIf="isHighcharts" [update] = "true" [Highcharts]="Highcharts" [options]="chartOptions2"></highcharts-chart>
+              <figure class = "highcharts-figure">
+                <div id = "container2">
+                </div>
+            </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class = "parent" [@slidingState2]="stateName" id = 'details_panel' [hidden] = "hideState2">
+    <div class = "container-md" id = "results2">
+      <div class = "row justify-content-md-center">
+        <div class = "col-md-auto">
+          <p id = detail_title>Forecast at New York, New York</p>
+        </div>
+      </div>
+      <div class = "row justify-content-start" id = detail_title2>
+        <div class = "col-3" id = "details_toggle2">
+          <button id = details_toggle2 class = "btn btn-outline-secondary" (click)="detail_to_general()"><span  class = "bi bi-chevron-left"></span>List</button>
+        </div>
+        <div class = "col-2 offset-7" id = x_button>
+          <a [href]="tweet_message" target="_self" type = 'button' class = "btn btn-outline-secondary"><span  class = "bi bi-twitter-x"></span></a>
+        </div>
+      </div>
+      <div class = "row justify-content-start detail_row">
+        <div class = "col-4 detail_table_title">Status</div>
+        <div class = "col-8 detail_table_value" id = 'detail_status'>Clear</div>
+      </div>
+      <div class = "row justify-content-start detail_row2">
+        <div class = "col-4 detail_table_title">Max Temperature</div>
+        <div class = "col-8 detail_table_value" id = 'detail_temp_max'>67.58&deg;F</div>
+      </div>
+      <div class = "row justify-content-start detail_row">
+        <div class = "col-4 detail_table_title">Min Temperature</div>
+        <div class = "col-8 detail_table_value" id = 'detail_temp_min'>44.31&deg;F</div>
+      </div>
+      <div class = "row justify-content-start detail_row2">
+        <div class = "col-4 detail_table_title">Apparent Temperature</div>
+        <div class = "col-8 detail_table_value" id = 'detail_temp_app'>67.58&deg;F</div>
+      </div>
+      <div class = "row justify-content-start detail_row">
+        <div class = "col-4 detail_table_title">Sun Rise Time</div>
+        <div class = "col-8 detail_table_value" id = 'sun_rise_t'>4 AM</div>
+      </div>
+      <div class = "row justify-content-start detail_row2">
+        <div class = "col-4 detail_table_title">Sun Set Time</div>
+        <div class = "col-8 detail_table_value" id = 'sun_set_t'>3 PM</div>
+      </div>
+      <div class = "row justify-content-start detail_row">
+        <div class = "col-4 detail_table_title">Humidity</div>
+        <div class = "col-8 detail_table_value" id = 'humidity'>74.08%</div>
+      </div>
+      <div class = "row justify-content-start detail_row2">
+        <div class = "col-4 detail_table_title">Wind Speed</div>
+        <div class = "col-8 detail_table_value" id = 'wind_speed'>12.01mph</div>
+      </div>
+      <div class = "row justify-content-start detail_row">
+        <div class = "col-4 detail_table_title">Visibility</div>
+        <div class = "col-8 detail_table_value" id = 'visibility'>13.31mi</div>
+      </div>
+      <div class = "row justify-content-start detail_row2">
+        <div class = "col-4 detail_table_title">Cloud Cover</div>
+        <div class = "col-8 detail_table_value" id = 'cloud_cover'>0%</div>
+      </div>
+      <google-map height="600px" width="100%" [options]="options">
+        <map-advanced-marker #markerElem="mapAdvancedMarker" [position]="map_positions"/>
+      </google-map>
+    </div>
+  </div>
+  <div id = 'favorites_panel' [hidden] = "hideState3">
+    <div class = "container-md" id = 'container_favorite'>
+      <div class = "row justify-content-start favorite_row_title">
+        <div class = "col-1">#</div>
+        <div class = "col-5">City</div>
+        <div class = "col-5">State</div>
+        <div class = "col-1"></div>
+      </div>
+      <div class = "row justify-content-start favorite_row_content">
+        <div class = "col-1">1</div>
+        <div class = "col-5">New York</div>
+        <div class = "col-5">New York</div>
+        <div class = "col-1"><span class="bi bi-trash-fill"></span></div>
+      </div>
+    </div>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id = 'progressbar2' [hidden] = 'hideProgressBar2'>
+    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 50%"></div>
+  </div>
+  <div class = "container_bg container-md" id = 'sorry_container' [hidden] = '!show_sorry'>
+    <div class = "row justify-content-start" id = 'sorry_row'>
+      <div class = "col-12" ><span id = 'sorry'>Sorry!</span> No records found.</div>
+    </div>
+  </div>
+  <div class = "container_bg container-md" id = 'error_container' [hidden] = '!show_error'>
+    <div class = "row justify-content-start" id = 'error_row'>
+      <div class = "col-12" >An error occured please try again later</div>
+    </div>
+  </div>
+</div>

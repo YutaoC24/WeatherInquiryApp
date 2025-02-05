@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:orientation="vertical"
+    android:translationY="0dp">
+
+    <include
+        android:id="@+id/main_page_ui"
+        layout="@layout/main_page"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:visibility="visible" />
+
+    <include
+        android:id="@+id/search_page_ui"
+        layout="@layout/search_page"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/search_result"
+        layout="@layout/search_page_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/main_week_content"
+        layout="@layout/week_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayoutMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeCustom.TabLayout"
+        android:translationY="0dp"
+        android:visibility="visible"
+        app:tabIndicatorColor="#FFFFFF"
+        app:tabTextAppearance="@style/MineCustomTabText"
+        app:tabBackground="@drawable/tab_selector"
+        app:tabIndicatorHeight="0dp"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPagerMain"
+        android:layout_width="match_parent"
+        android:layout_height="776dp"
+        android:layout_weight="1"
+        android:translationY="0dp"
+        android:visibility="visible" />
+
+    <EditText
+        android:id="@+id/loadingText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:text="Loading"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:translationY="360dp"
+        android:visibility="gone" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:translationY="270dp"
+        android:visibility="gone" />
+
+</LinearLayout>
+
+<!--
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:orientation="vertical"
+    android:translationY="0dp">
+
+    <include
+        android:id="@+id/main_page_ui"
+        layout="@layout/main_page"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:visibility="visible" />
+
+    <include
+        android:id="@+id/search_page_ui"
+        layout="@layout/search_page"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/search_result"
+        layout="@layout/search_page_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/main_week_content"
+        layout="@layout/week_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible" />
+
+    <EditText
+        android:id="@+id/loadingText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:text="Loading"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:translationY="360dp"
+        android:visibility="gone" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:translationY="270dp"
+        android:visibility="gone" />
+
+</LinearLayout>
+-->
