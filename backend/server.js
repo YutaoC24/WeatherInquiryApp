@@ -8,7 +8,7 @@ const multer = require('multer');
 const app = express()
 app.use(cors());
 
-var mongoString = 'mongodb+srv://tomorrowIOuser:b7YTcE7vSHqowZYo@cluster0.seves.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+var mongoString = 'mongodb+srv://tomorrowIOuser:customize@cluster0.seves.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 var database;
 const DATABASENAME = 'tomorrowIOdb'
 const COLLECTIONNAME = 'tomorrowIOcollection'
@@ -142,7 +142,7 @@ app.get('/api/autoComplete/:input', (req, res) => {
     const input_value = req.params.input;
     (async () => {
         try {
-            const res2 = await fetch('https://maps.googleapis.com/maps/api/place/autocomplete/json?language=en&components=country:us&types=(cities)&input=' + input_value + '&key=AIzaSyADHfUZE92mQDKuJFFmE_4BXEE5GsGg05k');
+            const res2 = await fetch('https://maps.googleapis.com/maps/api/place/autocomplete/json?language=en&components=country:us&types=(cities)&input=' + input_value + '&key=customize');
             const headerDate = res2.headers && res2.headers.get('date') ? res2.headers.get('date') : 'no response date';
             console.log('Status Code:', res2.status);
             console.log('Date in Response header:', headerDate);
@@ -171,7 +171,7 @@ app.get('/api/geocoding/:street/:city/:state', (req, res) => {
     (async () => {
         try {
             url_for_geo = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + street + '+' + city + '+' + state
-                            +'&key=AIzaSyADHfUZE92mQDKuJFFmE_4BXEE5GsGg05k'
+                            +'&key=customize'
             console.log(url_for_geo);
             const res2 = await fetch(url_for_geo);
             const headerDate = res2.headers && res2.headers.get('date') ? res2.headers.get('date') : 'no response date';
@@ -221,7 +221,7 @@ app.get('/api/tomorrowIO/:lat/:lng', (req, res) => {
                             + '&fields=cloudCover'
                             + '&units=imperial'
                             + '&timesteps=1d'
-                            + '&apikey=jMJyqDMlExeP1boJqmRMooPzKTIJDPlZ'
+                            + '&apikey=customize'
             console.log(url_for_table)
             const res2 = await fetch(url_for_table);
             const headerDate = res2.headers && res2.headers.get('date') ? res2.headers.get('date') : 'no response date';
@@ -259,7 +259,7 @@ app.get('/api/tomorrowIOChart/:lat/:lng', (req, res) => {
                             + '&fields=windSpeed'
                             + '&units=imperial'
                             + '&timesteps=1h'
-                            + '&apikey=jMJyqDMlExeP1boJqmRMooPzKTIJDPlZ'
+                            + '&apikey=customize'
             console.log(url_for_table)
             const res2 = await fetch(url_for_table);
             const headerDate = res2.headers && res2.headers.get('date') ? res2.headers.get('date') : 'no response date';
